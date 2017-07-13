@@ -25,6 +25,8 @@ class NewEmployee: UIViewController
     {
         super.viewDidLoad()
         
+        createDatePicker()
+        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         do
@@ -89,9 +91,7 @@ class NewEmployee: UIViewController
         do
         {
             try managedContext.save()
-            
-            print("Success")
-            
+            navigationController?.popViewController(animated: true)
         }
         catch let error as NSError
         {
