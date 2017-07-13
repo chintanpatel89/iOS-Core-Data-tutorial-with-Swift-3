@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet var tblEmployee: UITableView!
     
@@ -24,8 +24,7 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         self.title = "Employees"
-        
-        let testUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "tab.png"), style: .plain, target: self, action: #selector(self.newMovieClicked))
+        let testUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "add.png"), style: .plain, target: self, action: #selector(self.newMovieClicked))
         self.navigationItem.rightBarButtonItem  = testUIBarButtonItem
     }
     
